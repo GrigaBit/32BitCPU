@@ -32,7 +32,8 @@ The processor will support 3 main types of instructions:
 
 The standard structure of an instruction is as follows. However, each type of instruction has a particular structure.
 
-tabel_simplu .
+![image](https://github.com/user-attachments/assets/5f41a271-d840-4bbf-81bb-fb1017456ac9)
+
 
 Cond means the condition that must be met, for example for 0000 the condition is "Equal", for 0001 the condition is "Not Equal" .
 
