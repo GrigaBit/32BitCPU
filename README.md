@@ -49,4 +49,35 @@ Rn/Rd indicates the source register and the destination register respectively.
 
 Src2 indicates the secondary source of the data.
 
+Data processing instruction :
+
+The data processing instructions have the same structure as the standard one. At positions 27:26 there is the code specific to each type of instruction, in this case 00 for data processing instructions. 
+Bit 25 has the value 1 if the data in Src2 will be immediate data, and 0 if there is another register in Src2. In both cases Src2 is divided into other subcategories, but for simplicity we have kept only the strictly necessary information.
+
+![image](https://github.com/user-attachments/assets/7182bb01-ed85-4c40-9d04-d613af86cc76)
+
+Memory instruction:
+
+Memory instructions are the most complex, the classic instruction structure transforming into:
+
+![image](https://github.com/user-attachments/assets/7629d40c-ee16-47c0-8ccd-b99c2abc4052)
+
+The positions that I will deal with in this project are:
+Position 25, the I bit which, as in the case of data processing instructions, indicates whether the value in Src2 is immediate or not.
+Position 22 and 20, the L&B bits which indicate the instruction subtype, for a moment I will focus only on 2: Load and Store (1.0 and 0.0 respectively).
+
+Branch instructions :
+
+Branch instructions have a simple structure:
+
+![image](https://github.com/user-attachments/assets/a1beec95-3b6d-4f06-8c96-1f2402ce7685)
+
+The Imm24 field will contain the address where the jump is desired, in our case the jump is a maximum of 32 MB.
+
+A simplified diagram of the internal structure of the CPU:
+
+<img width="608" alt="CPU" src="https://github.com/user-attachments/assets/766d41ef-6b11-48b6-81b1-ac0df60eb297" />
+
+
+
 *The control part of the system will be uploaded in the near future.
